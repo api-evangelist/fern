@@ -4,7 +4,10 @@ apis:
   - aid: fern:fern
     name: Fern
     tags:
-      - API
+      - SDKs
+      - Documentation
+      - OpenAPI
+      - Platform
     humanURL: https://buildwithfern.com/
     properties:
       - url: https://buildwithfern.com/
