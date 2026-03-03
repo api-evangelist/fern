@@ -28,6 +28,9 @@ access: 3rd-Party
 created: '2025-01-08'
 modified: '2025-07-15'
 position: Consuming
+segments:
+  - SDKs
+  - Documentation
 description: >-
   Fern allows developers to instantly transform your OpenAPI into SDKs and Docs.
   Engineering teams build with Fern to offer a best-in-class developer
