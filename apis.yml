@@ -8,10 +8,20 @@ apis:
       - Documentation
       - OpenAPI
       - Platform
+      - API Definitions
+      - Developer Experience
+      - Code Generation
+      - AI
     humanURL: https://buildwithfern.com/
     properties:
       - url: https://buildwithfern.com/
         type: Documentation
+      - url: https://buildwithfern.com/learn/docs/getting-started/overview
+        type: Getting Started
+      - url: https://buildwithfern.com/learn/sdks/overview/introduction
+        type: SDKs
+      - url: https://buildwithfern.com/learn/docs/api-references/generate-api-ref
+        type: API Reference
     description: >-
       We use Fern to autogenerate our Python and Node API clients from our
       OpenAPI spec. The clients are high quality, easy to update, and the Fern
@@ -22,15 +32,22 @@ tags:
   - Documentation
   - OpenAPI
   - Platform
+  - API Definitions
+  - Developer Experience
+  - Code Generation
+  - AI
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-01-08'
-modified: '2025-07-15'
+modified: '2026-03-03'
 position: Consuming
 segments:
   - SDKs
   - Documentation
+  - API Definitions
+  - Developer Experience
+  - Code Generation
 description: >-
   Fern allows developers to instantly transform your OpenAPI into SDKs and Docs.
   Engineering teams build with Fern to offer a best-in-class developer
@@ -41,7 +58,7 @@ description: >-
   software companies.
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
 common:
   - name: GitHub Organization
@@ -90,3 +107,87 @@ common:
     description: 'null'
     url: https://www.buildwithfern.com/terms-of-service
     type: TermsOfService
+  - name: Getting Started | Fern
+    description: >-
+      Set up a Fern documentation site in under 5 minutes with quickstart
+      guides for docs and SDK generation.
+    url: https://buildwithfern.com/learn/docs/getting-started/quickstart
+    type: Getting Started
+  - name: SDKs | Fern
+    description: >-
+      Generate production-ready SDKs in TypeScript, Python, Go, Java, C#,
+      PHP, Ruby, Swift, and Rust from your API definition.
+    url: https://buildwithfern.com/learn/sdks/overview/introduction
+    type: SDKs
+  - name: GitHub Repository
+    description: >-
+      The main Fern open-source repository for SDK and documentation
+      generation from OpenAPI specifications.
+    url: https://github.com/fern-api/fern
+    type: GitHubRepository
+  - name: Login | Fern
+    description: >-
+      Access the Fern Dashboard for web analytics, search and Ask AI
+      analytics, and documentation feedback.
+    url: https://dashboard.buildwithfern.com/login
+    type: Login
+  - name: SignUp | Fern
+    description: >-
+      Create a Fern account to start generating SDKs and documentation
+      for your API.
+    url: https://dashboard.buildwithfern.com/login
+    type: SignUp
+  - name: X | Fern
+    description: >-
+      Official Fern account on X with product updates, developer
+      experience insights, and community engagement.
+    url: https://x.com/buildwithfern
+    type: X
+  - name: LinkedIn | Fern
+    description: >-
+      Official Fern LinkedIn company page with news, product updates,
+      and career opportunities.
+    url: https://www.linkedin.com/company/buildwithfern
+    type: LinkedIn
+  - name: Slack Community | Fern
+    description: >-
+      Join the Fern community Slack workspace for support, discussion,
+      and collaboration with other Fern users.
+    url: https://buildwithfern.com/slack
+    type: Slack
+  - name: Careers | Fern
+    description: >-
+      Open positions at Fern, a Postman company building open-source
+      developer tools in Brooklyn, NY.
+    url: https://buildwithfern.com/careers
+    type: Careers
+  - name: Trust Center | Fern
+    description: >-
+      Fern Trust Center powered by SafeBase covering SOC 2 compliance,
+      security practices, data protection, and incident response.
+    url: https://security.buildwithfern.com/
+    type: TrustCenter
+  - name: CLI Reference | Fern
+    description: >-
+      Reference documentation for the Fern CLI including commands for
+      generating SDKs, documentation, and exporting API definitions.
+    url: https://buildwithfern.com/learn/cli-api-reference/cli-reference/commands
+    type: CLI
+  - name: OpenAPI Support | Fern
+    description: >-
+      Documentation on using OpenAPI specifications with Fern for SDK
+      generation and API documentation.
+    url: https://buildwithfern.com/learn/api-definitions/openapi/overview
+    type: Documentation
+  - name: AI Features | Fern
+    description: >-
+      AI-powered documentation features including Ask Fern chatbot,
+      AI-generated code examples, and Fern Writer for technical content.
+    url: https://buildwithfern.com/learn/docs/ai-features/overview
+    type: Documentation
+  - name: npm Package
+    description: >-
+      Install the Fern CLI globally via npm to generate SDKs and
+      documentation from the command line.
+    url: https://www.npmjs.com/package/fern-api
+    type: Package
