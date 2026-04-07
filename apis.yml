@@ -4,14 +4,14 @@ apis:
   - aid: fern:fern
     name: Fern
     tags:
-      - SDKs
+      - AI
+      - API Definitions
+      - Code Generation
+      - Developer Experience
       - Documentation
       - OpenAPI
       - Platform
-      - API Definitions
-      - Developer Experience
-      - Code Generation
-      - AI
+      - SDKs
     humanURL: https://buildwithfern.com/
     properties:
       - url: https://buildwithfern.com/
@@ -28,14 +28,14 @@ apis:
       team moves blazing ...
 name: Fern
 tags:
-  - SDKs
+  - AI
+  - API Definitions
+  - Code Generation
+  - Developer Experience
   - Documentation
   - OpenAPI
   - Platform
-  - API Definitions
-  - Developer Experience
-  - Code Generation
-  - AI
+  - SDKs
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -68,7 +68,7 @@ common:
     url: https://brandfetch.com/buildwithfern.com
     type: Branding
   - name: 'Fern: SDKs and Docs for your API'
-    description: "Start with an API\_spec. Generate SDKs in multiple languages and interactive API documentation tailored to your brand."
+    description: "Start with an API spec. Generate SDKs in multiple languages and interactive API documentation tailored to your brand."
     url: https://buildwithfern.com/
     type: Website
   - name: The Fern Platform | Fern
