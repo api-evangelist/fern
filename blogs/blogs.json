@@ -1,0 +1,13 @@
+{
+  "repo": "fern",
+  "feeds": [
+    {
+      "source": "https://www.buildwithfern.com/blog",
+      "feed_url": "https://www.buildwithfern.com/post/rss.xml",
+      "saved": 10,
+      "title": "Fern Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:28:01Z"
+}
