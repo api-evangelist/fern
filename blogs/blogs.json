@@ -3,11 +3,11 @@
   "feeds": [
     {
       "source": "https://www.buildwithfern.com/blog",
-      "feed_url": "https://www.buildwithfern.com/post/rss.xml",
-      "saved": 10,
-      "title": "Fern Blog"
+      "feed_url": "https://www.buildwithfern.com/blog/rss.xml",
+      "title": "Fern Blog",
+      "saved": 1
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-05-03T23:28:01Z"
+  "post_count": 11,
+  "fetched": "2026-05-09T20:17:51Z"
 }
