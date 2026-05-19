@@ -12,7 +12,7 @@ image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/apis.yml
 created: '2025-01-08'
-modified: '2026-04-18'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 kind: contract
 access: 3rd-Party
@@ -131,6 +131,9 @@ common:
         description: Automatic publishing of generated Java SDKs to Maven Central repository.
       - name: NuGet
         description: Automatic publishing of generated C# SDKs to the NuGet package registry.
+  - name: MCP Server
+    url: https://github.com/fern-api/fern-mcp-server
+    type: MCPServer
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
