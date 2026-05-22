@@ -1,0 +1,70 @@
+name: OpenAPI to SDK and Docs
+description: >-
+  End-to-end Fern workflow. An OpenAPI specification is registered as the source
+  of truth, Fern generates SDKs across nine languages, an interactive docs site
+  is published, and agent-readiness artifacts (llms.txt, MCP) are emitted so
+  Claude, Cursor, and Windsurf can use the API immediately.
+provider: Fern
+providerId: fern
+created: '2026-05-22'
+tags:
+  - Agent Ready
+  - AI
+  - Code Generation
+  - Developer Experience
+  - Documentation
+  - MCP
+  - OpenAPI
+  - SDKs
+workflow:
+  - step: register-openapi-source
+    capability: fern.api.registerSource
+    description: Point Fern at the canonical OpenAPI specification (URL or repo path).
+    inputs:
+      - openapiSpecUrl
+    outputs:
+      - apiDefinition
+  - step: configure-generators
+    capability: fern.sdk.configureGenerators
+    description: Declare the set of SDK generators (typescript, python, go, java, csharp, php, ruby, swift, rust) and their publish targets.
+    inputs:
+      - generatorList
+    outputs:
+      - generatorConfig
+  - step: generate-sdks
+    capability: fern.sdk.generate
+    description: Run all configured generators to emit idiomatic SDKs.
+    inputs:
+      - apiDefinition
+      - generatorConfig
+    outputs:
+      - generatedSdks
+  - step: publish-sdks
+    capability: fern.sdk.publish
+    description: Publish each SDK to its language-native registry via the Fern GitHub Action.
+    inputs:
+      - generatedSdks
+    outputs:
+      - publishedPackages
+  - step: publish-docs
+    capability: fern.docs.publish
+    description: Build and deploy the Fern docs site, including the OpenAPI-driven API reference and API explorer.
+    inputs:
+      - docsConfig
+      - apiDefinition
+    outputs:
+      - hostedDocsSite
+  - step: emit-llms-txt
+    capability: fern.docs.llmsTxt
+    description: Generate the llms.txt artifact for agent consumption.
+    inputs:
+      - hostedDocsSite
+    outputs:
+      - llmsTxtArtifact
+  - step: enable-mcp
+    capability: fern.mcp.askFern
+    description: Wire the docs into the Fern MCP server so AI clients can run ask_fern_ai against it.
+    inputs:
+      - hostedDocsSite
+    outputs:
+      - mcpEndpoint

@@ -1,66 +1,99 @@
 aid: fern
 name: Fern
 description: >-
-  Fern allows developers to instantly transform your OpenAPI into SDKs and Docs.
-  Engineering teams build with Fern to offer a best-in-class developer
-  experience. Stripe, Twilio, and AWS have the resources to invest in internal
-  tooling for developer experience. They provide SDKs (aka client libraries) in
-  multiple languages and developer documentation that stays up-to-date. We are
-  building Fern to productize this process and make it accessible to all
-  software companies.
+  Fern is an SDK generation and documentation platform designed for the AI era.
+  It transforms OpenAPI, AsyncAPI, Protobuf (gRPC), and OpenRPC specifications
+  into idiomatic, production-ready SDKs across nine languages plus auto-generated,
+  branded developer documentation, an AI-first CLI, llms.txt for agent
+  discoverability, Ask Fern AI search, and an MCP server that connects Claude,
+  Cursor, and Windsurf into the workflow. Engineering teams at ElevenLabs,
+  Deepgram, Square, Webflow, Auth0, LaunchDarkly, Cohere, Pinecone, Cash App,
+  and OpenRouter use Fern to deliver world-class developer experiences from a
+  single source of truth.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/apis.yml
 created: '2025-01-08'
-modified: '2026-05-19'
+modified: '2026-05-22'
 specificationVersion: '0.19'
 kind: contract
 access: 3rd-Party
 position: Consuming
 tags:
+  - Agent Ready
   - AI
   - API Definitions
+  - AsyncAPI
   - Code Generation
   - Developer Experience
+  - Developer Portal
   - Documentation
+  - gRPC
+  - llms.txt
+  - MCP
   - OpenAPI
+  - OpenRPC
   - Platform
+  - Protobuf
   - SDKs
+  - WebSockets
 segments:
   - SDKs
   - Documentation
   - API Definitions
   - Developer Experience
   - Code Generation
+  - Agent Ready
+  - MCP
 apis:
   - aid: fern:fern
     name: Fern
     description: >-
-      We use Fern to autogenerate our Python and Node API clients from our
-      OpenAPI spec. The clients are high quality, easy to update, and the Fern
-      team moves blazing fast.
+      Fern transforms a single API source of truth (OpenAPI, AsyncAPI, Protobuf,
+      OpenRPC, or the Fern Definition Language) into type-safe SDKs in nine
+      languages, branded interactive documentation with API explorer, an
+      agent-first CLI, llms.txt artifacts, and an MCP server. The platform is
+      positioned as Docs, SDKs, and CLIs designed for the AI era.
     humanURL: https://buildwithfern.com/
     tags:
+      - Agent Ready
       - AI
       - API Definitions
+      - AsyncAPI
       - Code Generation
       - Developer Experience
       - Documentation
+      - gRPC
+      - llms.txt
+      - MCP
       - OpenAPI
+      - OpenRPC
       - Platform
+      - Protobuf
       - SDKs
+      - WebSockets
     properties:
       - type: Documentation
-        url: https://buildwithfern.com/
+        url: https://buildwithfern.com/learn
       - type: GettingStarted
         url: https://buildwithfern.com/learn/docs/getting-started/overview
       - type: SDK
         url: https://buildwithfern.com/learn/sdks/overview/introduction
       - type: APIReference
         url: https://buildwithfern.com/learn/docs/api-references/generate-api-ref
+      - type: CLI
+        url: https://buildwithfern.com/learn/cli-reference/overview
+      - type: MCPServer
+        url: https://github.com/fern-api/fern-mcp-server
+      - type: Changelog
+        url: https://buildwithfern.com/learn/changelog
+      - type: Showcase
+        url: https://www.buildwithfern.com/showcase
 common:
   - type: GitHubOrganization
     url: https://github.com/fern-api
+  - type: GitHubRepository
+    url: https://github.com/fern-api/fern
   - type: Branding
     url: https://brandfetch.com/buildwithfern.com
   - type: Documentation
@@ -81,8 +114,6 @@ common:
     url: https://www.buildwithfern.com/terms-of-service
   - type: GettingStarted
     url: https://buildwithfern.com/learn/docs/getting-started/quickstart
-  - type: GitHubRepository
-    url: https://github.com/fern-api/fern
   - type: Login
     url: https://dashboard.buildwithfern.com/login
   - type: SignUp
@@ -93,47 +124,283 @@ common:
     url: https://www.linkedin.com/company/buildwithfern
   - type: TrustCenter
     url: https://security.buildwithfern.com/
+  - type: MCPServer
+    url: https://github.com/fern-api/fern-mcp-server
+  - type: AgentReadinessScore
+    url: https://github.com/fern-api/agent-score
+  - type: Changelog
+    url: https://buildwithfern.com/learn/changelog
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/plans/fern-plans-pricing.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/rate-limits/fern-rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/finops/fern-finops.yml
+  - type: Capabilities
+    url: https://github.com/api-evangelist/fern/tree/main/capabilities
+  - type: JSONSchema
+    url: https://github.com/api-evangelist/fern/tree/main/json-schema
+  - type: JSONLD
+    url: https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/json-ld/fern-context.jsonld
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/vocabulary/fern-vocabulary.yml
   - type: Features
     data:
       - name: SDK Generation
-        description: Generate production-ready SDKs in TypeScript, Python, Go, Java, C#, PHP, Ruby, Swift, and Rust from OpenAPI specs.
+        description: Generate production-ready, type-safe SDKs in TypeScript, Python, Go, Java, C#, PHP, Ruby, Swift, and Rust from OpenAPI, AsyncAPI, Protobuf, or the Fern Definition Language.
       - name: API Documentation
-        description: Auto-generate beautiful, branded API documentation with interactive examples and playground.
-      - name: Ask AI
-        description: AI-powered documentation chatbot that answers developer questions using your API docs as context.
+        description: Auto-generate beautiful, branded API documentation with interactive API explorer, search, dark mode, SEO, and custom domain support.
+      - name: Ask Fern
+        description: AI-powered in-docs search and chatbot that answers developer questions using your API docs, SDKs, and guides as context.
       - name: Fern Definition Language
-        description: Purpose-built API definition language as an alternative to OpenAPI for defining API contracts.
-      - name: OpenAPI Support
-        description: First-class OpenAPI specification support for both SDK generation and documentation.
-      - name: Versioning
-        description: Built-in API versioning support for documentation and SDK generation across multiple API versions.
+        description: Purpose-built API definition language as an alternative to OpenAPI for authoring API contracts.
+      - name: llms.txt Generation
+        description: Auto-generated llms.txt markdown artifacts so LLMs and AI agents can consume documentation directly.
+      - name: MCP Server
+        description: Hosted Model Context Protocol server that connects Claude, Cursor, and Windsurf to Ask Fern AI search and the Fern docs and SDK platform.
+      - name: Agent Score
+        description: Open-source tool that rates documentation sites on their agent readiness across structure, semantics, and machine-readable content.
+      - name: Fern Writer
+        description: AI-assisted documentation authoring inside the Fern docs platform.
+      - name: Multi-Protocol Support
+        description: First-class support for OpenAPI (REST plus Webhooks), AsyncAPI (WebSockets), Protobuf (gRPC), and OpenRPC.
+      - name: Versioning and Multi-Product
+        description: Built-in versioning, product switching, and multi-source aggregation across multiple APIs and product surfaces.
+      - name: Self-Hosting
+        description: Enterprise self-hosting of the Fern docs platform inside a customer environment.
+      - name: Visitor Authentication
+        description: JWT and SSO-gated docs for partner-only and internal documentation.
   - type: UseCases
     data:
       - name: SDK Generation from OpenAPI
-        description: Transform OpenAPI specifications into idiomatic client libraries across multiple programming languages.
-      - name: Developer Documentation
-        description: Generate and host interactive API documentation with custom branding and domain support.
+        description: Transform OpenAPI specifications into idiomatic client libraries across nine programming languages with automated publishing to npm, PyPI, Maven Central, NuGet, and other registries.
+      - name: Developer Documentation Hosting
+        description: Replace Docusaurus, Mintlify, GitBook, or ReadMe with a Fern-hosted docs site featuring custom branding and domain.
       - name: API-First Development
-        description: Define APIs using Fern Definition Language and generate server stubs, SDKs, and documentation.
+        description: Define APIs in Fern Definition Language and generate server stubs, SDKs, and documentation from one source of truth.
       - name: SDK Maintenance Automation
-        description: Automatically update and publish SDKs when API specifications change, reducing maintenance burden.
-      - name: Developer Portal Creation
-        description: Build comprehensive developer portals with guides, API references, and SDK documentation.
+        description: Auto-update and re-publish SDKs each time an OpenAPI specification changes via GitHub Actions CI/CD.
+      - name: Agent-Ready Documentation
+        description: Make docs consumable by LLMs and AI coding agents through llms.txt, MCP, and structured semantic content.
+      - name: Multi-Protocol Reference Docs
+        description: Document REST plus WebSocket plus gRPC surfaces in a single unified developer experience.
+      - name: Migration From Stainless, ReadMe, Mintlify, or GitBook
+        description: Migrate existing developer docs and SDK pipelines to Fern in days rather than quarters.
   - type: Integrations
     data:
       - name: GitHub Actions
-        description: CI/CD integration for automatically generating and publishing SDKs on API specification changes.
+        description: First-party GitHub Actions for SDK generation, OpenAPI sync, and CI/CD publishing workflows.
       - name: npm Registry
-        description: Automatic publishing of generated TypeScript/JavaScript SDKs to the npm package registry.
+        description: Automatic publishing of generated TypeScript and JavaScript SDKs.
       - name: PyPI
-        description: Automatic publishing of generated Python SDKs to the Python Package Index.
+        description: Automatic publishing of generated Python SDKs.
       - name: Maven Central
-        description: Automatic publishing of generated Java SDKs to Maven Central repository.
+        description: Automatic publishing of generated Java SDKs.
       - name: NuGet
-        description: Automatic publishing of generated C# SDKs to the NuGet package registry.
-  - name: MCP Server
-    url: https://github.com/fern-api/fern-mcp-server
-    type: MCPServer
+        description: Automatic publishing of generated C# SDKs.
+      - name: RubyGems
+        description: Automatic publishing of generated Ruby SDKs.
+      - name: Packagist
+        description: Automatic publishing of generated PHP SDKs.
+      - name: Crates.io
+        description: Automatic publishing of generated Rust SDKs.
+      - name: Swift Package Manager
+        description: Distribution of generated Swift SDKs.
+      - name: Go Modules
+        description: Distribution of generated Go SDKs via versioned tags.
+      - name: Postman
+        description: Native ingestion of Postman collections as a documentation and SDK source.
+      - name: Anthropic Claude
+        description: MCP server integration so Claude Desktop and Claude Code can query Ask Fern AI and assist with Fern workflows.
+      - name: Cursor
+        description: MCP integration plus llms.txt make Fern-generated docs first-class context for the Cursor IDE.
+      - name: Windsurf
+        description: MCP server support for Windsurf's AI coding environment.
+      - name: ChatGPT, Gemini, Microsoft Copilot
+        description: Documentation indexing and llms.txt artifacts so leading LLMs can answer questions grounded in customer docs.
+  - type: Partnerships
+    data:
+      - name: Anthropic
+        description: Claude integration via the fern-mcp-server and Ask Fern AI knowledge surface.
+      - name: Cursor
+        description: Cursor MCP integration and llms.txt-driven context for AI-assisted coding against Fern-documented APIs.
+      - name: Windsurf
+        description: MCP integration with Codeium Windsurf.
+      - name: Postman
+        description: Joint blog series and integration delivering world-class developer experiences alongside Postman collections.
+  - type: SDK
+    data:
+      - name: TypeScript SDK Generator
+        description: Generates idiomatic TypeScript and JavaScript SDKs with full type safety, published to npm.
+      - name: Python SDK Generator
+        description: Generates idiomatic Python SDKs with Pydantic models, published to PyPI.
+      - name: Go SDK Generator
+        description: Generates idiomatic Go SDKs published as Go modules.
+      - name: Java SDK Generator
+        description: Generates idiomatic Java SDKs published to Maven Central.
+      - name: C# SDK Generator
+        description: Generates idiomatic C# SDKs published to NuGet.
+      - name: PHP SDK Generator
+        description: Generates idiomatic PHP SDKs published to Packagist.
+      - name: Ruby SDK Generator
+        description: Generates idiomatic Ruby SDKs published to RubyGems.
+      - name: Swift SDK Generator
+        description: Generates idiomatic Swift SDKs distributed via Swift Package Manager.
+      - name: Rust SDK Generator
+        description: Generates idiomatic Rust SDKs published to crates.io.
+  - type: GitHubRepositories
+    data:
+      - name: fern
+        description: Core platform. Input OpenAPI, output SDKs and docs. TypeScript, Apache-2.0, 3.6k+ stars, 170+ contributors.
+        url: https://github.com/fern-api/fern
+      - name: fern-mcp-server
+        description: Model Context Protocol server exposing the ask_fern_ai tool to Claude, Cursor, and Windsurf via stdio and an HTTP endpoint.
+        url: https://github.com/fern-api/fern-mcp-server
+      - name: agent-score
+        description: Rates docs sites on their agent readiness.
+        url: https://github.com/fern-api/agent-score
+      - name: docs-starter
+        description: Starter template to publish docs from OpenAPI plus MDX.
+        url: https://github.com/fern-api/docs-starter
+      - name: docs-starter-fern-definition
+        description: Starter template to publish docs from a Fern Definition.
+        url: https://github.com/fern-api/docs-starter-fern-definition
+      - name: sdk-starter
+        description: Starter template for generating SDKs in TypeScript, Python, Go, Java, C#, PHP, and Ruby.
+        url: https://github.com/fern-api/sdk-starter
+      - name: sync-openapi
+        description: GitHub Action that syncs OpenAPI specs to a Fern configuration.
+        url: https://github.com/fern-api/sync-openapi
+      - name: setup-fern-cli
+        description: GitHub Action that installs the Fern CLI into a workflow via npm.
+        url: https://github.com/fern-api/setup-fern-cli
+      - name: actions
+        description: Reusable Fern GitHub Actions for SDK and docs workflows.
+        url: https://github.com/fern-api/actions
+      - name: docs
+        description: The Fern public documentation site, built with Fern.
+        url: https://github.com/fern-api/docs
+      - name: docs-templates
+        description: Template collection for Fern documentation projects.
+        url: https://github.com/fern-api/docs-templates
+      - name: docs-examples
+        description: Example Fern docs configurations.
+        url: https://github.com/fern-api/docs-examples
+      - name: docs-custom-js-example
+        description: Example Fern docs site with custom headers and footers.
+        url: https://github.com/fern-api/docs-custom-js-example
+      - name: docs-site-sync
+        description: Chrome extension for side-by-side comparison of old and new documentation sites during migration.
+        url: https://github.com/fern-api/docs-site-sync
+      - name: migration-checker
+        description: Automated analysis tool for comparing old and new documentation sites during migration.
+        url: https://github.com/fern-api/migration-checker
+      - name: fastapi-starter
+        description: Starter repo for FastAPI plus React using Fern.
+        url: https://github.com/fern-api/fastapi-starter
+      - name: express-starter
+        description: Starter repo for Express using Fern.
+        url: https://github.com/fern-api/express-starter
+      - name: spring-starter
+        description: Starter repo for Java Spring using Fern.
+        url: https://github.com/fern-api/spring-starter
+      - name: generator-cli-go
+        description: Go library to invoke the Fern generator CLI.
+        url: https://github.com/fern-api/generator-cli-go
+      - name: generator-exec-go
+        description: Go library for progress updates between the Go generator and Fern's remote generation server.
+        url: https://github.com/fern-api/generator-exec-go
+      - name: ir-go
+        description: Go bindings for the Fern Intermediate Representation.
+        url: https://github.com/fern-api/ir-go
+      - name: protoc-gen-openapi
+        description: A protoc plugin that compiles Protobuf services into OpenAPI for downstream Fern generation.
+        url: https://github.com/fern-api/protoc-gen-openapi
+      - name: sphinx-autodoc2-fern
+        description: CLI that auto-generates Fern markdown API documentation for Python packages.
+        url: https://github.com/fern-api/sphinx-autodoc2-fern
+      - name: swift-sdk-comparison
+        description: Reference comparison of Swift SDKs across different SDK generators.
+        url: https://github.com/fern-api/swift-sdk-comparison
+      - name: incident-node
+        description: TypeScript SDK for the Incident.io public API, generated by Fern.
+        url: https://github.com/fern-api/incident-node
+      - name: incident-python
+        description: Python SDK for the Incident.io public API, generated by Fern.
+        url: https://github.com/fern-api/incident-python
+      - name: make-unity-sdk
+        description: CLI that converts a generated C# SDK into a Unity C# SDK.
+        url: https://github.com/fern-api/make-unity-sdk
+  - type: Customers
+    data:
+      - name: ElevenLabs
+        description: Unified docs and SDKs on Fern at over one billion end users.
+      - name: Deepgram
+        description: Consolidated REST plus WebSocket documentation into a single developer experience.
+      - name: OpenRouter
+        description: Rebuilt docs platform around agent-native workflows, automated writing, and AI search.
+      - name: Square
+        description: SDKs across multiple languages generated by Fern.
+      - name: Webflow
+        description: SDKs across multiple languages generated by Fern.
+      - name: Auth0
+        description: SDKs and docs generated by Fern.
+      - name: LaunchDarkly
+        description: SDKs generated by Fern.
+      - name: Cohere
+        description: SDKs for AI inference APIs generated by Fern.
+      - name: Pinecone
+        description: SDKs for the vector database generated by Fern.
+      - name: AssemblyAI
+        description: SDKs generated by Fern.
+      - name: Candid Health
+        description: SDKs generated by Fern.
+      - name: Merge
+        description: SDKs and docs generated by Fern.
+      - name: Vapi
+        description: SDKs generated by Fern.
+      - name: Flatfile
+        description: SDKs generated by Fern.
+      - name: Payabli
+        description: Migrated from Mintlify in three weeks and built interactive developer tools on Fern.
+      - name: Unleash
+        description: Migrated 300+ pages off Docusaurus in two weeks and made every doc AI-ready.
+      - name: Frame.io
+        description: Turned auth questions from 90% of support load into self-serve answers on Fern.
+      - name: Cash App
+        description: Hosts developer docs on Fern.
+      - name: Clearpay
+        description: Hosts developer docs on Fern.
+      - name: ID.me
+        description: Hosts developer docs on Fern.
+      - name: You.com
+        description: Hosts developer docs on Fern.
+      - name: Persona
+        description: Hosts developer docs on Fern.
+      - name: Instabase
+        description: Hosts developer docs on Fern.
+      - name: Chainalysis
+        description: Hosts developer docs on Fern.
+      - name: Ada
+        description: Hosts developer docs on Fern.
+      - name: Nominal
+        description: Hosts developer docs on Fern.
+      - name: Babel Street
+        description: Hosts developer docs on Fern.
+      - name: Beehiiv
+        description: Hosts developer docs on Fern.
+  - type: Compliance
+    data:
+      - name: SOC 2
+        description: SOC 2 reported via the Fern Trust Center.
+      - name: 21 CFR Part 11
+        description: Healthcare and pharmaceutical regulatory compliance reported via the Trust Center.
+      - name: SSO and SAML and OIDC
+        description: Enterprise SSO available on the Enterprise plan.
+      - name: Visitor Authentication
+        description: JWT-based visitor authentication for partner and internal docs on Enterprise.
+      - name: Self-Hosting
+        description: Self-hosted deployment available on the Enterprise plan.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

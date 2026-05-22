@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-schema/fern-mcp-tool-schema.json",
+  "title": "Fern MCP Tool Invocation",
+  "description": "Schema describing a Model Context Protocol tool call exposed by the Fern MCP server (e.g. ask_fern_ai).",
+  "type": "object",
+  "required": ["tool", "input"],
+  "properties": {
+    "tool": {
+      "type": "string",
+      "description": "Name of the MCP tool to invoke.",
+      "enum": ["ask_fern_ai"]
+    },
+    "input": {
+      "type": "object",
+      "required": ["query"],
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Natural-language question routed to the Ask Fern AI knowledge base."
+        },
+        "docsSite": {
+          "type": "string",
+          "description": "Optional Fern docs site slug to scope the query."
+        }
+      }
+    },
+    "transport": {
+      "type": "string",
+      "enum": ["stdio", "http"],
+      "description": "MCP transport used by the calling client."
+    },
+    "client": {
+      "type": "string",
+      "enum": ["claude-desktop", "claude-code", "cursor", "windsurf", "other"],
+      "description": "Calling AI client."
+    }
+  }
+}

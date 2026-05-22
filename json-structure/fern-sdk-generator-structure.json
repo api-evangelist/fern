@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/2025/draft/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-structure/fern-sdk-generator-structure.json",
+  "name": "FernSdkGenerator",
+  "description": "JSON Structure representation of a Fern SDK generator configuration.",
+  "type": "object",
+  "properties": {
+    "name": {"type": "string"},
+    "language": {
+      "type": "string",
+      "enum": ["typescript", "python", "go", "java", "csharp", "php", "ruby", "swift", "rust"]
+    },
+    "version": {"type": "string"},
+    "output": {
+      "type": "object",
+      "properties": {
+        "location": {"type": "string"},
+        "package": {"type": "string"},
+        "repository": {"type": "string"},
+        "license": {"type": "string"}
+      }
+    },
+    "publish": {
+      "type": "object",
+      "properties": {
+        "onMerge": {"type": "boolean"},
+        "preRelease": {"type": "boolean"}
+      }
+    }
+  },
+  "required": ["language", "name"]
+}

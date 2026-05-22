@@ -1,0 +1,9 @@
+{
+  "tool": "ask_fern_ai",
+  "input": {
+    "query": "How do I add a new OpenAPI source to my fern.config.json and regenerate my TypeScript SDK?",
+    "docsSite": "buildwithfern"
+  },
+  "transport": "stdio",
+  "client": "claude-code"
+}

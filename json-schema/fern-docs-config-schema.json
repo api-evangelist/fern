@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-schema/fern-docs-config-schema.json",
+  "title": "Fern Docs Configuration",
+  "description": "Schema describing a Fern documentation site configuration: navigation, branding, custom domain, and the API references it surfaces.",
+  "type": "object",
+  "required": ["title", "navigation"],
+  "properties": {
+    "title": {"type": "string"},
+    "favicon": {"type": "string"},
+    "logo": {
+      "type": "object",
+      "properties": {
+        "light": {"type": "string"},
+        "dark": {"type": "string"},
+        "href": {"type": "string", "format": "uri"}
+      }
+    },
+    "colors": {
+      "type": "object",
+      "properties": {
+        "accentPrimary": {"type": "string"},
+        "background": {"type": "string"}
+      }
+    },
+    "domain": {
+      "type": "string",
+      "description": "Custom domain or subdomain hosting the docs site."
+    },
+    "navigation": {
+      "type": "array",
+      "description": "Top-level navigation entries; each can be a section, page, or API reference.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tab": {"type": "string"},
+          "section": {"type": "string"},
+          "page": {"type": "string"},
+          "api": {"type": "string"},
+          "contents": {"type": "array"}
+        }
+      }
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": {"type": "string"},
+          "url": {"type": "string"}
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "description": "Multi-product switcher entries.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "subpath": {"type": "string"}
+        }
+      }
+    },
+    "ai": {
+      "type": "object",
+      "description": "AI search and agent-readiness configuration.",
+      "properties": {
+        "askFernEnabled": {"type": "boolean"},
+        "llmsTxtEnabled": {"type": "boolean"},
+        "mcp": {
+          "type": "object",
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "endpoint": {"type": "string", "format": "uri"}
+          }
+        }
+      }
+    },
+    "auth": {
+      "type": "object",
+      "description": "Visitor authentication for partner or internal docs.",
+      "properties": {
+        "type": {"type": "string", "enum": ["public", "jwt", "sso", "rbac"]}
+      }
+    }
+  }
+}

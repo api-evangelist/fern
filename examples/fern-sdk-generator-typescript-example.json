@@ -1,0 +1,15 @@
+{
+  "name": "fernapi/fern-typescript-sdk",
+  "language": "typescript",
+  "version": "0.x",
+  "output": {
+    "location": "npm",
+    "package": "@buildwithfern/example-sdk",
+    "license": "MIT"
+  },
+  "publish": {
+    "onMerge": true,
+    "preRelease": false,
+    "tagFormat": "v{version}"
+  }
+}

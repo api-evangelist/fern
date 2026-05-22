@@ -1,0 +1,52 @@
+name: Docs Migration to Fern
+description: >-
+  Customer-facing migration workflow Fern uses to move developer docs off
+  Mintlify, Stainless, ReadMe, GitBook, or Docusaurus onto Fern. Combines the
+  docs-site-sync chrome extension, migration-checker, and agent-score tooling.
+provider: Fern
+providerId: fern
+created: '2026-05-22'
+tags:
+  - Documentation
+  - Developer Experience
+  - Migration
+workflow:
+  - step: inventory-source-site
+    description: Crawl the existing docs site and inventory pages, navigation, and assets.
+    inputs:
+      - sourceSiteUrl
+    outputs:
+      - pageInventory
+  - step: configure-fern-target
+    description: Stand up a fern docs configuration mirroring the source navigation and brand.
+    inputs:
+      - pageInventory
+    outputs:
+      - docsConfig
+  - step: side-by-side-compare
+    description: Use the docs-site-sync extension to compare old and new docs side by side and detect broken links.
+    inputs:
+      - sourceSiteUrl
+      - fernPreviewUrl
+    outputs:
+      - migrationDiffReport
+  - step: run-migration-checker
+    description: Run migration-checker for automated link, page, and content-parity analysis.
+    inputs:
+      - sourceSiteUrl
+      - fernPreviewUrl
+    outputs:
+      - migrationCheckReport
+  - step: score-agent-readiness
+    capability: fern.docs.agentScore
+    description: Score the new Fern docs site on agent readiness before cutover.
+    inputs:
+      - fernPreviewUrl
+    outputs:
+      - agentReadinessReport
+  - step: cut-over
+    description: Repoint the canonical docs domain at the Fern-hosted site.
+    inputs:
+      - docsConfig
+    outputs:
+      - hostedDocsSite

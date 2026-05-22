@@ -1,0 +1,17 @@
+{
+  "id": "elevenlabs-public-api",
+  "name": "ElevenLabs Public API",
+  "version": "v1",
+  "description": "Public REST and WebSocket API for ElevenLabs voice synthesis, documented and SDK-generated via Fern.",
+  "source": {
+    "type": "openapi",
+    "url": "https://api.elevenlabs.io/openapi.json"
+  },
+  "protocols": ["rest", "websocket", "webhook"],
+  "auth": {
+    "schemes": ["api-key"]
+  },
+  "environments": [
+    {"name": "production", "url": "https://api.elevenlabs.io", "default": true}
+  ]
+}

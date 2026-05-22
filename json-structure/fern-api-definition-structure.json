@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-structure.org/2025/draft/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-structure/fern-api-definition-structure.json",
+  "name": "FernApiDefinition",
+  "description": "JSON Structure representation of a Fern API definition. Captures the upstream source, target protocols, authentication, environments, and generators a Fern project pulls together.",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "version": {"type": "string"},
+    "description": {"type": "string"},
+    "source": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string", "enum": ["openapi", "asyncapi", "protobuf", "openrpc", "fern-definition"]},
+        "path": {"type": "string"},
+        "url": {"type": "uri"}
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["rest", "websocket", "grpc", "webhook", "json-rpc"]}
+    },
+    "auth": {
+      "type": "object",
+      "properties": {
+        "schemes": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "environments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "url": {"type": "uri"},
+          "default": {"type": "boolean"}
+        }
+      }
+    },
+    "generators": {
+      "type": "array",
+      "items": {"$ref": "./fern-sdk-generator-structure.json"}
+    }
+  },
+  "required": ["id", "name", "source"]
+}

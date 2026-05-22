@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "@vocab": "https://buildwithfern.com/schema/",
+    "schema": "https://schema.org/",
+    "fern": "https://buildwithfern.com/schema/",
+    "apis": "http://apisjson.org/spec/",
+    "mcp": "https://modelcontextprotocol.io/schema/",
+
+    "id": "@id",
+    "type": "@type",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:version",
+    "license": "schema:license",
+    "publisher": "schema:publisher",
+
+    "FernPlatform": "fern:Platform",
+    "ApiDefinition": "fern:ApiDefinition",
+    "SdkGenerator": "fern:SdkGenerator",
+    "DocsSite": "fern:DocsSite",
+    "FernDefinition": "fern:Definition",
+    "AskFernAI": "fern:AskFernAI",
+    "MCPServer": "mcp:Server",
+    "LlmsTxt": "fern:LlmsTxt",
+    "AgentScore": "fern:AgentScore",
+
+    "source": "fern:source",
+    "protocols": "fern:protocols",
+    "language": "fern:language",
+    "package": "fern:package",
+    "registry": "fern:registry",
+    "environments": "fern:environments",
+    "generators": "fern:generators",
+    "navigation": "fern:navigation",
+    "domain": "fern:domain",
+    "askFernEnabled": "fern:askFernEnabled",
+    "llmsTxtEnabled": "fern:llmsTxtEnabled",
+    "mcpEnabled": "fern:mcpEnabled",
+    "visitorAuth": "fern:visitorAuth",
+    "selfHosted": "fern:selfHosted",
+
+    "supports": {
+      "@id": "fern:supports",
+      "@type": "@id"
+    },
+    "generatedBy": {
+      "@id": "fern:generatedBy",
+      "@type": "@id"
+    },
+    "publishesTo": {
+      "@id": "fern:publishesTo",
+      "@type": "@id"
+    },
+    "consumedBy": {
+      "@id": "fern:consumedBy",
+      "@type": "@id"
+    }
+  }
+}

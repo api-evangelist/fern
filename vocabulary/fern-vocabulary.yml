@@ -1,0 +1,67 @@
+name: Fern Vocabulary
+description: >-
+  Controlled vocabulary describing the concepts, artifacts, products, and integration
+  surfaces of the Fern SDK generation and documentation platform. Used to align
+  apis.yml, capabilities, JSON Schemas, and JSON-LD across the api-evangelist
+  fern repository.
+provider: Fern
+providerId: fern
+version: '0.2'
+created: '2026-05-22'
+tags:
+  - Agent Ready
+  - AI
+  - API Definitions
+  - Code Generation
+  - Developer Experience
+  - Documentation
+  - MCP
+  - OpenAPI
+  - SDKs
+terms:
+  - term: Fern Platform
+    definition: The hosted Fern offering that ingests API source-of-truth specifications and produces SDKs, docs, CLIs, llms.txt, and an MCP knowledge surface.
+  - term: Fern Definition Language
+    definition: Fern's purpose-built API description language, used as an alternative to OpenAPI for authoring API contracts.
+  - term: API Definition
+    definition: A single API surface managed inside a Fern project, sourced from OpenAPI, AsyncAPI, Protobuf, OpenRPC, or the Fern Definition Language.
+  - term: SDK Generator
+    definition: A Fern component that compiles an API definition into an idiomatic SDK for a specific target language.
+  - term: Generated SDK
+    definition: A versioned, type-safe client library produced by a Fern SDK generator and published to a language-native package registry.
+  - term: Docs Site
+    definition: A Fern-managed documentation site rendering navigation, MDX content, API reference, changelog, and AI search from a Fern docs configuration.
+  - term: API Reference
+    definition: The auto-generated, interactive API reference section of a Fern docs site, including request/response schemas and code samples.
+  - term: API Explorer
+    definition: The in-docs interactive request playground that lets developers exercise an API directly from the documentation.
+  - term: Ask Fern
+    definition: Fern's AI-powered in-docs search and chat surface grounded in the customer's docs, SDKs, and guides.
+  - term: Fern Writer
+    definition: AI-assisted documentation authoring inside the Fern docs platform.
+  - term: llms.txt
+    definition: Auto-generated machine-readable markdown index of a Fern docs site, designed for LLM and AI agent consumption.
+  - term: MCP Server
+    definition: Fern's Model Context Protocol server that exposes Ask Fern AI to MCP-aware clients such as Claude Desktop, Claude Code, Cursor, and Windsurf.
+  - term: ask_fern_ai
+    definition: The primary MCP tool exposed by the fern-mcp-server, accepting a natural-language query against the Fern knowledge base.
+  - term: Agent Score
+    definition: Fern's open-source tool that rates documentation sites on their agent readiness.
+  - term: Agent Readiness
+    definition: The degree to which a documentation site can be navigated, parsed, and reasoned about by AI agents, evaluated across structure, semantics, and machine-readable artifacts.
+  - term: Generator Configuration
+    definition: The YAML or JSON block declaring a generator, its version, output target, and publishing behavior.
+  - term: Output Mode
+    definition: Whether a generated SDK is written to the local file system, a GitHub repository, or directly to a package registry such as npm or PyPI.
+  - term: Source of Truth
+    definition: The single API specification artifact (OpenAPI, AsyncAPI, Protobuf, OpenRPC, or Fern Definition) that Fern reads to drive all downstream outputs.
+  - term: Multi-Protocol Support
+    definition: Fern's ability to model REST, Webhooks, WebSockets, gRPC, and JSON-RPC inside a unified docs and SDK pipeline.
+  - term: Visitor Authentication
+    definition: Per-visitor JWT or SSO gating of docs content for partner or internal audiences.
+  - term: Self-Hosting
+    definition: Enterprise deployment of the Fern docs platform inside a customer-controlled environment.
+  - term: Migration Checker
+    definition: Fern's tooling for comparing legacy documentation sites against a Fern target to catch missing pages and broken links during migration.
+  - term: Sync OpenAPI Action
+    definition: The fern-api/sync-openapi GitHub Action that pulls a remote OpenAPI specification into a Fern repository on schedule or on demand.

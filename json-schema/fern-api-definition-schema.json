@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-schema/fern-api-definition-schema.json",
+  "title": "Fern API Definition",
+  "description": "Schema describing a Fern-managed API definition. A Fern project can be authored from one of several upstream sources (OpenAPI, AsyncAPI, Protobuf, OpenRPC, or the Fern Definition Language) and produces SDKs and documentation as outputs.",
+  "type": "object",
+  "required": ["id", "name", "source"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier for the API definition inside a Fern project."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-friendly API name."
+    },
+    "version": {
+      "type": "string",
+      "description": "API version string, semantic version preferred."
+    },
+    "description": {
+      "type": "string",
+      "description": "Free-form description of the API."
+    },
+    "source": {
+      "type": "object",
+      "description": "Upstream source of truth that Fern reads to generate SDKs and docs.",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["openapi", "asyncapi", "protobuf", "openrpc", "fern-definition"]
+        },
+        "path": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "overrides": {"type": "string"}
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "description": "Wire protocols this API exposes.",
+      "items": {
+        "type": "string",
+        "enum": ["rest", "websocket", "grpc", "webhook", "json-rpc"]
+      }
+    },
+    "auth": {
+      "type": "object",
+      "description": "Authentication scheme metadata for SDK generators and docs.",
+      "properties": {
+        "schemes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["bearer", "basic", "api-key", "oauth2", "jwt", "header", "custom"]
+          }
+        }
+      }
+    },
+    "environments": {
+      "type": "array",
+      "description": "Named environments (e.g. production, sandbox) used by generated SDKs.",
+      "items": {
+        "type": "object",
+        "required": ["name", "url"],
+        "properties": {
+          "name": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "default": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

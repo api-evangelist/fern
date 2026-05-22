@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/2025/draft/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-structure/fern-docs-config-structure.json",
+  "name": "FernDocsConfig",
+  "description": "JSON Structure for a Fern documentation site configuration.",
+  "type": "object",
+  "properties": {
+    "title": {"type": "string"},
+    "domain": {"type": "string"},
+    "logo": {
+      "type": "object",
+      "properties": {
+        "light": {"type": "string"},
+        "dark": {"type": "string"},
+        "href": {"type": "uri"}
+      }
+    },
+    "navigation": {"type": "array", "items": {"type": "object"}},
+    "versions": {"type": "array", "items": {"type": "object"}},
+    "products": {"type": "array", "items": {"type": "object"}},
+    "ai": {
+      "type": "object",
+      "properties": {
+        "askFernEnabled": {"type": "boolean"},
+        "llmsTxtEnabled": {"type": "boolean"},
+        "mcp": {
+          "type": "object",
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "endpoint": {"type": "uri"}
+          }
+        }
+      }
+    },
+    "auth": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string", "enum": ["public", "jwt", "sso", "rbac"]}
+      }
+    }
+  },
+  "required": ["title", "navigation"]
+}

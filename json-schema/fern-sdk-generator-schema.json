@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fern/main/json-schema/fern-sdk-generator-schema.json",
+  "title": "Fern SDK Generator",
+  "description": "Schema describing a Fern SDK generator configuration. Each generator emits an idiomatic SDK in a single target language and optionally publishes it to a package registry.",
+  "type": "object",
+  "required": ["language", "name"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Generator name (e.g. fernapi/fern-typescript-sdk)."
+    },
+    "language": {
+      "type": "string",
+      "description": "Target SDK language.",
+      "enum": [
+        "typescript",
+        "python",
+        "go",
+        "java",
+        "csharp",
+        "php",
+        "ruby",
+        "swift",
+        "rust"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "Generator version pin."
+    },
+    "output": {
+      "type": "object",
+      "description": "Destination for the generated SDK.",
+      "properties": {
+        "location": {
+          "type": "string",
+          "enum": ["local-file-system", "npm", "pypi", "maven-central", "nuget", "rubygems", "packagist", "crates-io", "github"]
+        },
+        "package": {"type": "string"},
+        "repository": {"type": "string"},
+        "license": {"type": "string"}
+      }
+    },
+    "config": {
+      "type": "object",
+      "description": "Generator-specific configuration options."
+    },
+    "publish": {
+      "type": "object",
+      "description": "Automatic publishing behavior.",
+      "properties": {
+        "onMerge": {"type": "boolean"},
+        "preRelease": {"type": "boolean"},
+        "tagFormat": {"type": "string"}
+      }
+    }
+  }
+}

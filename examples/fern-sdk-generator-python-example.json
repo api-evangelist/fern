@@ -1,0 +1,14 @@
+{
+  "name": "fernapi/fern-python-sdk",
+  "language": "python",
+  "version": "0.x",
+  "output": {
+    "location": "pypi",
+    "package": "example-sdk",
+    "license": "MIT"
+  },
+  "publish": {
+    "onMerge": true,
+    "preRelease": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Example Developer Docs",
+  "domain": "docs.example.com",
+  "logo": {
+    "light": "./logo-light.svg",
+    "dark": "./logo-dark.svg",
+    "href": "https://example.com"
+  },
+  "colors": {
+    "accentPrimary": "#5C44E4",
+    "background": "#0B0B12"
+  },
+  "navigation": [
+    {"tab": "Documentation", "contents": [
+      {"section": "Getting Started", "contents": [
+        {"page": "Overview", "path": "./pages/overview.mdx"},
+        {"page": "Quickstart", "path": "./pages/quickstart.mdx"}
+      ]}
+    ]},
+    {"tab": "API Reference", "contents": [
+      {"api": "openapi"}
+    ]}
+  ],
+  "versions": [
+    {"version": "v2", "url": "/v2"},
+    {"version": "v1", "url": "/v1"}
+  ],
+  "ai": {
+    "askFernEnabled": true,
+    "llmsTxtEnabled": true,
+    "mcp": {
+      "enabled": true,
+      "endpoint": "https://fern-mcp-server.vercel.app/api/mcp"
+    }
+  },
+  "auth": {
+    "type": "public"
+  }
+}

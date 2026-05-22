@@ -9,9 +9,9 @@ alignedWith:
 provider: Fern
 providerId: fern
 publisherName: Fern
-serviceCategory: API
+serviceCategory: Developer Tools / API Platform
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-22'
 tags:
   - AI
   - API Definitions
@@ -24,20 +24,21 @@ tags:
   - FinOps
   - Cost Management
   - FOCUS
-description: FinOps framework definition for the Fern API surface. Provides a FOCUS-aligned mapping for
-  cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: >-
+  FinOps framework mapping for Fern. Fern's commercial model is seat-and-credit
+  based (Hobby, Team, Enterprise) layered on top of usage of AI surfaces (Ask
+  Fern, Fern Writer) measured in AI credits. This file maps Fern's billing
+  surface to the FinOps Foundation framework and FOCUS data spec so consuming
+  organizations can allocate, forecast, and unit-economize Fern spend.
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Make Fern seat and AI-credit consumption visible to platform engineering, docs, and finance.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Allocate Fern subscription cost to the API or product lines whose SDKs and docs Fern produces.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Right-size seat counts and choose between Hobby, Team, and Enterprise based on actual usage.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Assign an owner for each Fern workspace and a budget for AI credits per cycle.
 domains:
   - name: Understand Usage and Cost
     capabilities:
@@ -54,10 +55,8 @@ domains:
       - Unit Economics
   - name: Optimize Usage and Cost
     capabilities:
-      - Architecting for Cloud
       - Rate Optimization
       - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
   - name: Manage the FinOps Practice
     capabilities:
@@ -65,9 +64,8 @@ domains:
       - FinOps Education and Enablement
       - Invoicing and Chargeback
       - Onboarding Workloads
-      - Intersecting Disciplines
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Subscription Plus Usage
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
@@ -79,61 +77,50 @@ billingModel:
   chargeFrequency: Recurring
 focusColumns:
   ServiceName: Fern
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Developer Tools / API Platform
   ProviderName: Fern
   PublisherName: Fern
   InvoiceIssuerName: Fern
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PricingCategory: Subscription Plus Usage
+  PricingUnit: seat-or-ai-credit
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: seats
+    description: Active workspace seats billed each cycle.
+    unit: seat
+    aggregation: max
+    dimensions:
+      - workspace
+      - plan
+  - name: ai_credits
+    description: AI credits consumed by Ask Fern, Fern Writer, and other AI surfaces.
+    unit: credit
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
+      - workspace
+      - surface
+      - feature
 apis:
-  - name: Fern
-    baseURL: ''
+  - name: Fern Platform
+    baseURL: https://buildwithfern.com
     tags:
       - AI
-      - API Definitions
       - Code Generation
       - Developer Experience
       - Documentation
-      - OpenAPI
-      - Platform
       - SDKs
     serviceName: Fern
-    serviceCategory: API
+    serviceCategory: Developer Tools / API Platform
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
+  - name: Cost per Active Seat
+    metric: billed_cost / seats
     target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
+  - name: Cost per AI Credit Consumed
+    metric: billed_cost / ai_credits_consumed
+    target: TBD
+  - name: Cost per Generated SDK Release
+    metric: billed_cost / sdk_releases
     target: TBD
 maintainers:
   - FN: Kin Lane
