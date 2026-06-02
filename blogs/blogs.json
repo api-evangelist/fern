@@ -2,12 +2,17 @@
   "repo": "fern",
   "feeds": [
     {
-      "source": "https://www.buildwithfern.com/blog",
-      "feed_url": "https://www.buildwithfern.com/blog/rss.xml",
-      "title": "Fern Blog",
-      "saved": 41
+      "source": "https://www.buildwithfern.com/blog/rss.xml",
+      "error": "HTTPError"
+    },
+    {
+      "source": "https://www.buildwithfern.com/pricing",
+      "feed_url": "https://www.buildwithfern.com/pricing",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 52,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
