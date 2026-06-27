@@ -77,7 +77,7 @@ apis:
         url: https://buildwithfern.com/learn
       - type: GettingStarted
         url: https://buildwithfern.com/learn/docs/getting-started/overview
-      - type: SDK
+      - type: SDKs
         url: https://buildwithfern.com/learn/sdks/overview/introduction
       - type: APIReference
         url: https://buildwithfern.com/learn/docs/api-references/generate-api-ref
@@ -85,7 +85,7 @@ apis:
         url: https://buildwithfern.com/learn/cli-reference/overview
       - type: MCPServer
         url: https://github.com/fern-api/fern-mcp-server
-      - type: Changelog
+      - type: ChangeLog
         url: https://buildwithfern.com/learn/changelog
       - type: Showcase
         url: https://www.buildwithfern.com/showcase
@@ -116,7 +116,7 @@ common:
     url: https://buildwithfern.com/learn/docs/getting-started/quickstart
   - type: Login
     url: https://dashboard.buildwithfern.com/login
-  - type: SignUp
+  - type: Signup
     url: https://dashboard.buildwithfern.com/login
   - type: X
     url: https://x.com/buildwithfern
@@ -128,7 +128,7 @@ common:
     url: https://github.com/fern-api/fern-mcp-server
   - type: AgentReadinessScore
     url: https://github.com/fern-api/agent-score
-  - type: Changelog
+  - type: ChangeLog
     url: https://buildwithfern.com/learn/changelog
   - type: Plans
     url: https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/plans/fern-plans-pricing.yml
@@ -228,7 +228,7 @@ common:
         description: MCP integration with Codeium Windsurf.
       - name: Postman
         description: Joint blog series and integration delivering world-class developer experiences alongside Postman collections.
-  - type: SDK
+  - type: SDKs
     data:
       - name: TypeScript SDK Generator
         description: Generates idiomatic TypeScript and JavaScript SDKs with full type safety, published to npm.
