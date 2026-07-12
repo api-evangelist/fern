@@ -90,6 +90,8 @@ apis:
       - type: Showcase
         url: https://www.buildwithfern.com/showcase
 common:
+  - type: DomainSecurity
+    url: security/fern-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/fern-api
   - type: GitHubRepository
