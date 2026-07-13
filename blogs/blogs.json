@@ -2,13 +2,14 @@
   "repo": "fern",
   "feeds": [
     {
-      "source": "https://www.buildwithfern.com/blog",
-      "feed_url": "",
+      "source": "https://www.buildwithfern.com/pricing",
+      "feed_url": "https://www.buildwithfern.com/pricing",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
-  "post_count": 52,
-  "fetched": "2026-06-27T12:41:01Z",
-  "agent_pulled": "2026-06-27"
+  "post_count": 53,
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
