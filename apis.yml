@@ -10,7 +10,19 @@ description: >-
   Deepgram, Square, Webflow, Auth0, LaunchDarkly, Cohere, Pinecone, Cash App,
   and OpenRouter use Fern to deliver world-class developer experiences from a
   single source of truth.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fern.png
 url: >-
   https://raw.githubusercontent.com/api-evangelist/fern/refs/heads/main/apis.yml
 created: '2025-01-08'
