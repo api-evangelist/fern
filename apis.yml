@@ -102,6 +102,15 @@ apis:
       - type: Showcase
         url: https://www.buildwithfern.com/showcase
 common:
+  - type: IssueTracker
+    url: https://github.com/fern-api/fern/issues
+  - type: Releases
+    url: https://github.com/fern-api/fern/releases
+  - type: ContributionGuide
+    url: https://github.com/fern-api/fern/blob/main/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/fern-api/fern/blob/main/LICENSE
   - type: DomainSecurity
     url: security/fern-domain-security.yml
   - type: GitHubOrganization
