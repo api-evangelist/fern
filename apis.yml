@@ -33,6 +33,24 @@ access: 3rd-Party
 position: Consuming
 tags:
   - Agent Ready
+  - Artificial Intelligence
+  - API Definitions
+  - AsyncAPI
+  - Code Generation
+  - Developer Experience
+  - Developer Portal
+  - Documentation
+  - gRPC
+  - llms-txt
+  - MCP
+  - OpenAPI
+  - OpenRPC
+  - Platform
+  - Protobuf
+  - SDK
+  - WebSockets
+tags_raw:
+  - Agent Ready
   - AI
   - API Definitions
   - AsyncAPI
@@ -68,6 +86,23 @@ apis:
       positioned as Docs, SDKs, and CLIs designed for the AI era.
     humanURL: https://buildwithfern.com/
     tags:
+      - Agent Ready
+      - Artificial Intelligence
+      - API Definitions
+      - AsyncAPI
+      - Code Generation
+      - Developer Experience
+      - Documentation
+      - gRPC
+      - llms-txt
+      - MCP
+      - OpenAPI
+      - OpenRPC
+      - Platform
+      - Protobuf
+      - SDK
+      - WebSockets
+    tags_raw:
       - Agent Ready
       - AI
       - API Definitions
